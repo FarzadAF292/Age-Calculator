@@ -10,7 +10,6 @@ const showMessage = (text, isError = false) => {
 };
 
 calcBtn.addEventListener("click", () => {
-  // Step 2.1: just check if the user selected a date
   const value = birthdateInput.value;
 
   if (!value) {
@@ -19,5 +18,15 @@ calcBtn.addEventListener("click", () => {
     return;
   }
 
+  const birthDate = new Date(value);
+  const today = new Date();
+
+  if (birthDate > today) {
+    output.textContent = "—";
+    showMessage("Birth date cannot be in the future.", true);
+    return;
+  }
+
+  output.textContent = "—";
   showMessage(`Selected: ${value}`, false);
 });

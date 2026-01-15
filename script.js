@@ -1,6 +1,7 @@
 "use strict";
 const birthdateInput = document.getElementById("birthdate");
 const calcBtn = document.getElementById("calcBtn");
+const resetBtn = document.getElementById("resetBtn");
 const output = document.getElementById("output");
 const message = document.getElementById("message");
 
@@ -40,4 +41,10 @@ calcBtn.addEventListener("click", () => {
   }
 
   output.textContent = age;
+});
+
+resetBtn.addEventListener("click", () => {
+  birthdateInput.value = "";
+  output.textContent = "—";
+  showMessage("Please select your birth date.", false);
 });

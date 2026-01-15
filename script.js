@@ -47,4 +47,22 @@ resetBtn.addEventListener("click", () => {
   birthdateInput.value = "";
   output.textContent = "—";
   showMessage("Please select your birth date.", false);
+
+  showPreloader();
 });
+
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+  if (!preloader) return;
+
+  setTimeout(() => {
+    preloader.classList.add("hide");
+  }, 2000);
+});
+
+const showPreloader = () => {
+  const preloader = document.getElementById("preloader");
+  if (!preloader) return;
+  preloader.classList.remove("hide");
+  setTimeout(() => preloader.classList.add("hide"), 500);
+};

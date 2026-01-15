@@ -29,4 +29,15 @@ calcBtn.addEventListener("click", () => {
 
   output.textContent = "—";
   showMessage(`Selected: ${value}`, false);
+
+  let age = today.getFullYear() - birthDate.getFullYear();
+  if (
+    today.getMonth() < birthDate.getMonth() ||
+    (today.getMonth() === birthDate.getMonth() &&
+      today.getDate() < birthDate.getDate())
+  ) {
+    age--;
+  }
+
+  output.textContent = age;
 });

@@ -79,6 +79,15 @@ input {
   background: #1d4ed8;
 }
 
+.secondary {
+  background: rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+}
+
+.secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
 .result {
   margin-top: 6px;
   padding-top: 10px;

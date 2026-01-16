@@ -13,8 +13,15 @@ body {
   padding: 24px;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 .app {
-  width: min(520px, 100%);
+  width: 100%;
+  max-width: 520px;
+  min-width: 0;
 }
 
 h1 {
@@ -45,6 +52,7 @@ h1 {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
   display: grid;
   gap: 10px;
+  min-width: 0;
 }
 
 .label {
@@ -59,7 +67,12 @@ input {
   background: rgba(15, 23, 42, 0.35);
   color: #e2e8f0;
   outline: none;
-  width: 100%;
+  min-width: 0;
+}
+
+input[type="date"] {
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .btn {
